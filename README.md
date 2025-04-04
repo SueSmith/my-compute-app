@@ -19,7 +19,9 @@ In your codespace preview:
 * Try opening a page that doesn't exist: `/ohno`
 * Now try a page that the origin returns as JSON: `/data.json`
 
-> 💡 **TIP**: Split the editor into two panes and drag the preview into the second one so that you can see your code and the website at the same time.
+> 💡 **TIP**: Split the editor into two panes and drag the preview into the second one to see your code and the website at the same time.
+
+![Project in a codespace](https://github.com/user-attachments/assets/e117a513-bce6-44d4-aeb1-285e79d3ef92)
 
 Explore the code:
 
@@ -58,12 +60,20 @@ In your GitHub fork of this repo, in **Settings** open **Secrets and variables**
 * Enter the token value you copied from your Fastly account
 * Back in your codespace hopefully you see a prompt to update for your new repository secret
 
+![Repository token](https://github.com/user-attachments/assets/fdb07f12-2b2c-4b98-9450-45e5ab02c412)
+
 In the **Terminal** exit the local server with `CTRL+C`
 
 * Enter `npx @fastly/cli compute publish`
   * Include `--auto-yes` and/or `--accept-defaults` if you just want to use the default options instead of responding to each prompt
 
-The Terminal will output the address of your new app – open it in the browser!
+The Terminal will output the address of your new app, it will end `edgecompute.app` – open it in the browser!
+
+![Link in terminal](https://github.com/user-attachments/assets/d6ecde78-26d7-449b-bfa0-e3166a0ae9d7)
+
+How does your site behave differently on the edge?
+
+![Site deployed to the edge](https://github.com/user-attachments/assets/6ab9fe0b-1538-4cff-8a85-985018e8e97d)
 
 ## Keep going!
 
