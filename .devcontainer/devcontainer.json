@@ -19,19 +19,13 @@
 	"customizations": {
 		"codespaces": {
 			"openFiles": [
-				"src/index.js",
-				"README.md"
+				"src/index.js"
 			]
 		},
 		"vscode": {
 			"extensions": [
 				"ms-vscode.live-server"
-			],
-			"settings": {
-				"workbench.editorAssociations": {
-					"*.md": "vscode.markdown.preview.editor"
-				}
-			}
+			]
 		}
 	}
 	// Features to add to the dev container. More info: https://containers.dev/features.
