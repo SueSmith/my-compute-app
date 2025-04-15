@@ -14,7 +14,5 @@ jobs:
 
     - name: Deploy to the Compute platform
       uses: fastly/compute-actions@v5
-      with:
-        project_directory: './compute-js'
       env:
         FASTLY_API_TOKEN: ${{ secrets.FASTLY_API_TOKEN }}
