@@ -80,7 +80,7 @@ async function handleRequest(_event) {
   // Tell the user about how this response was delivered with a cookie
   backendResponse.headers.set(
     "Set-Cookie",
-    "location=This reponse was delivered by Fastly for a request from " +
+    "location=Oh hi this reponse was delivered by Fastly for a request from " +
       where +
       "; SameSite=None; Secure"
   );
