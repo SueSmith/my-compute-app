@@ -17,21 +17,48 @@
 	"postAttachCommand": "npx --yes @fastly/cli compute serve --watch",
 	"waitFor": "updateContentCommand",
 	"customizations": {
-		"codespaces": {
-			"openFiles": [
-				"src/index.js"
-			]
-		},
 		"vscode": {
 			"extensions": [
-				"ms-vscode.live-server"
-			]
+				"jkearins.action-buttons-ext@0.1.1",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint"
+			],
+			"settings": {
+				"files.exclude": {
+					"package-lock.json": true,
+					".gitignore": true,
+					"node_modules/": true
+				},
+				"editor.minimap.enabled": false,
+				"actionButtons": {
+					"commands": [
+						{
+							"name": "🪄 Prettify",
+							"singleInstance": true,
+							"useVsCodeApi": true,
+							"command": "editor.action.formatDocument"
+						},
+						{
+							"name": "💻 Terminal",
+							"singleInstance": true,
+							"useVsCodeApi": true,
+							"command": "workbench.action.terminal.toggleTerminal"
+						},
+						{
+							"name": "🚀 Deploy",
+							"singleInstance": true,
+							"command": "if [ ! $FASTLY_API_TOKEN ]; then echo 'Grab an API key and add it your repo before deploying!'; else npx @fastly/cli compute publish --service-name=$CODESPACE_NAME --accept-defaults --auto-yes || echo 'Oops! Something went wrong. 😭'; fi"
+						},
+						{
+							"name": "🔎 Split",
+							"singleInstance": true,
+							"useVsCodeApi": true,
+							"command": "workbench.action.moveEditorToNextGroup"
+						}
+					],
+					"defaultColor": "none"
+				}
+			}
 		}
 	}
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
