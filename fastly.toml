@@ -15,12 +15,12 @@ post_init = "npm install"
 [local_server]
   [local_server.backends]
     [local_server.backends.website]
-      url = "https://suesmith.github.io/"
-      override_host = "suesmith.github.io"
+      url = "https://glitchdotcom.github.io/"
+      override_host = "glitchdotcom.github.io"
 
 [setup]
 
   [setup.backends]
 
     [setup.backends.website]
-      address = "suesmith.github.io"
+      address = "glitchdotcom.github.io"
