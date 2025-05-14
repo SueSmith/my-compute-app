@@ -4,7 +4,7 @@
 
 import { getGeolocationForIpAddress } from "fastly:geolocation";
 let where = "?";
-let root = "/"; //change this if your site is at a different path
+let root = "/compute-origin/"; //change the root if your site is at a different path 
 
 // We use a function to handle requests to the origin
 addEventListener("fetch", (event) => event.respondWith(handleRequest(event)));
@@ -34,13 +34,13 @@ async function handleRequest(_event) {
       geo.country_code;
 
     // Set the stylesheet
-    let style = "/edge.css";
+    let style = root+"/edge.css";
     
     // 🚧 🚧 🚧 Add the code from Step 4 in the README on the next line 🚧 🚧 🚧
-    
-    if (url.pathname.indexOf(".css") >= 0) url.pathname = style;
-    url.pathname = url.pathname.replace("/", root);
 
+    url.pathname = url.pathname.replace("/", root);
+    if (url.pathname.indexOf(".css") >= 0) url.pathname = style;
+    
     // Build a new request
     req = new Request(url, req);
   } catch (error) {
